@@ -17,7 +17,7 @@ namespace ZodiacAnimals.Pages
         public void OnPost() {
             ViewData["Zodiac"] = Zodiac.GetZodiac(ZodiacYear);
             if (ViewData["Zodiac"] as string == "-1") {
-                ViewData["Zodiac"] = "Invalid year. Must be between 1900 and next year.";
+                ViewData["Zodiac"] = "Invalid year. The year must be between 1900 and next year.";
             }
         }
     }
