@@ -1,0 +1,148 @@
+@page
+@model ZodiacAnimals.Pages.ZodiacModel
+@{
+    ViewData["Title"] = "Zodiac Animal Page";
+}
+
+<style>
+    .Error {
+        background-color: red;
+        height: 20vh;
+        max-width: 50vw;
+        font-size: 24pt;
+        font-weight: bolder;
+        color: whitesmoke;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .Green {
+        background-color: deepskyblue;
+    }
+
+    .Gold {
+        background-color: blueviolet;
+    }
+
+    .Blue {
+        background-color: sandybrown;
+    }
+
+    .Grey {
+        background-color: gold;
+    }
+
+    .Pink {
+        background-color: chartreuse;
+    }
+
+    .ZodiacContainer {
+        max-width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .AnimalText {
+        font-size: 20pt;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .btn {
+        border: 2px solid black;
+        background-color: lightgray;
+        height: 35px;
+        margin: 3px;
+    }
+</style>
+<div class=text-center>
+    <h2>What's your Zodiac Animal?</h2>
+    <form method="post">
+        <div>
+            <label asp-for="ZodiacYear">
+                Year of birth:</label>
+            <input asp-for="ZodiacYear" />
+        </div>
+        <div style="margin-bottom: 10vh;">
+            <button type="submit" class=btn>Get Zodiac</button>
+            <a asp-action="Index" class=btn>Clear</a>
+        </div>
+    </form>
+    @switch(@ViewBag.Zodiac.ToString()) {
+            case "Dog":
+                <div class="Green ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/dog.png" />
+                </div>
+                break;
+            case "Rabbit":
+                <div class="Green ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/rabbit.png" />
+                </div>
+                break;
+            case "Snake":
+                <div class="Green ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/snake.png" />
+                </div>
+                break;
+            case "Dragon":
+                <div class="Gold ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/dragon.png" />
+                </div>
+                break;
+            case "Rooster":
+                <div class="Gold ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/rooster.png" />
+                </div>
+                break;
+            case "Tiger":
+                <div class="Gold ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/tiger.png" />
+                </div>
+                break;
+            case "Goat":
+                <div class="Blue ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/goat.png" />
+                </div>
+                break;
+            case "Ox":
+                <div class="Blue ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/ox.png" />
+                </div>
+                break;
+            case "Horse":
+                <div class="Grey ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/horse.png" />
+                </div>
+                break;
+            case "Monkey":
+                <div class="Grey ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/monkey.png" />
+                </div>
+                break;
+            case "Pig":
+                <div class="Pink ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/pig.png" />
+                </div>
+                break;
+            case "Rat":
+                <div class="Pink ZodiacContainer">
+                    <p class=AnimalText>@ViewBag.Zodiac.ToString()</p>
+                    <img src="~/images/rat.png" />
+                </div>
+                break;
+            default:
+                <div class="Error ZodiacContainer">@ViewBag.Zodiac.ToString()</div>
+                break;
+    }
+</div>
